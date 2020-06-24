@@ -1,0 +1,13 @@
+//Get the invoiceID, organizationID and Invoice Date
+invoiceID = invoice.get("invoice_id");
+orgID = organization.get("organization_id");
+invoicedate = invoice.get("date");
+//Set the validation to determine the due date based on the payment terms
+if(invoice.get("payment_terms") = "30") //--> Change this value to the payment term/s relevant to you
+{
+	duedate = invoicedate.addMonth(1).toStartofMonth().addDay(9); //--> Customize your due date calculation here
+}
+//Convert the due date to string according to the date format stored in the invoice record
+duedate = duedate.toString("YYYY-MM-dd");
+//Update the due date in the invoice
+update = zoho.books.updateRecord("Invoices",orgID,invoiceID,{"due_date":duedate});
