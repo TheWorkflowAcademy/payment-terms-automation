@@ -14,7 +14,7 @@ invoicedate = invoice.get("date");
 ```
 
 ### Set Validation Criteria
-Here is where you set the logic. In this example, if the payment term is "30", the script assign the **due date** to the 10th of the following month. Change this to suit any conditions and date calculations you may require.
+Here is where you set the logic. In this example, if the payment term is "30", the script assigns the **due date** to the 10th of the following month. Change this to suit any conditions and date calculations you may require.
 ```
 if(invoice.get("payment_terms") = "30")
 {
